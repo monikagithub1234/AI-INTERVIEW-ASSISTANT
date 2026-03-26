@@ -1,4 +1,4 @@
-# AI-INTERVIEW-ASSISTANT
+# AI Interview Assistant
 
 A comprehensive AI-powered interview Assistant with proctoring capabilities. This project integrates Gemini AI for question generation and multimodal evaluation (voice, text, body language, facial expression), and YOLO for computer vision proctoring (tab-switching, person, and phone detection).
 
@@ -89,8 +89,5 @@ The Flask app serves the frontend directory.
    - Keep phones out of sight (or you will receive a warning).
    - If you switch tabs during the interview, the system will record a tab switch. If you switch tabs 3 times, the interview will automatically terminate.
 
-
-
-<img width="1920" height="915" alt="{553765A2-683A-43FA-A8A5-03DE61ED3E07}" src="https://github.com/user-attachments/assets/d69c4fcd-9300-4e13-891f-77a598e44738" />
-<img width="1902" height="914" alt="{608C794C-17EE-44B3-B129-BC5958FC11EE}" src="https://github.com/user-attachments/assets/7d18a022-de64-4ed4-82fc-5619ee848d07" />
-<img width="1916" height="920" alt="{AD559FD4-F2F3-460B-A390-E30EB73B20F6}" src="https://github.com/user-attachments/assets/5249243a-5a2a-4c9e-8b3c-c9c052169f51" />
+---
+**Enjoy practicing your interviews!**

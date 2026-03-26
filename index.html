@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Interview Assistant</title>
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <video autoplay muted loop id="bgVideo">
+  <source src="./assets/bgvideo.mp4" type="video/mp4">
+</video>
+
+  </head>
+  <body>
+   <div class="container">
+      <div class="nav">
+        <div class="brand">
+       <h1>AI Interview Assistant</h1>
+        </div>
+        <div class="pill"><span class="mono" id="backendUrlLabel"></span></div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h2><center>Interview</center></h2>
+          <p class="muted">
+            Choose a role, then you’ll get a timed interview flow. Your answers can be typed or dictated using voice.
+          </p>
+
+          <label for="roleSelect">Job role</label>
+          <select id="roleSelect"></select>
+
+          <label for="resumeFile" id="resumeLabel" style="display:none;">Resume (PDF/DOCX)</label>
+          <input type="file" id="resumeFile" style="display:none;" accept=".pdf,.doc,.docx,.txt" />
+
+          <label for="questionCount">Number of questions (1–15)</label>
+          <input id="questionCount" type="number" min="5" max="15" value="10" />
+
+          <div class="row" style="margin-top: 12px">
+            <button class="btn primary" id="startBtn">Start interview</button>
+            <button class="btn" id="healthBtn">⬅️</button>
+            <span class="muted small" id="status"></span>
+          </div>
+
+          <div class="divider"></div>
+        </div>
+
+        <div class="card">
+          <h2><center>What gets evaluated</center></h2>
+          <div class="kpi">
+            <div class="box">
+              <div class="value">0–15</div>
+              <div class="label">Score per question</div>
+            </div>
+            <div class="box">
+              <div class="value">Feedback</div>
+              <div class="label">Technical + communication</div>
+            </div>
+            <div class="box">
+              <div class="value">Proctoring</div>
+              <div class="label">Tab switches detected</div>
+            </div>
+          </div>
+          <div class="divider"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>

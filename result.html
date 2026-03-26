@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Final Report</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <div class="brand">
+          <h1>Final Performance Report</h1>
+          <small class="muted" id="meta"></small>
+        </div>
+        <div class="row">
+          <button class="btn" id="newBtn">New interview</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Summary</h2>
+        <div class="kpi">
+          <div class="box">
+            <div class="value" id="totalScore">0</div>
+            <div class="label">Total score</div>
+          </div>
+          <div class="box">
+            <div class="value" id="avgScore">0</div>
+            <div class="label">Average score</div>
+          </div>
+          <div class="box">
+            <div class="value" id="tabSwitchesKpi">0</div>
+            <div class="label">Tab switches</div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="muted small" id="note"></div>
+      </div>
+
+      <div style="height: 14px"></div>
+
+      <div class="card">
+        <h2>Confidence score graph</h2>
+        <canvas id="scoreGraph" width="900" height="180"></canvas>
+        <div class="muted small" style="margin-top:10px">AI confidence proxy = score per question (0–10)</div>
+      </div>
+
+      <div class="card">
+        <h2>Per-question breakdown</h2>
+        <div class="list" id="list"></div>
+      </div>
+    </div>
+
+    <script src="./js/result.js"></script>
+  </body>
+</html>

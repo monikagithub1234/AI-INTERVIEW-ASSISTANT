@@ -1,0 +1,10 @@
+flask
+flask-cors
+python-dotenv
+google-generativeai
+ultralytics
+opencv-python
+pillow
+requests
+PyPDF2
+docx2txt

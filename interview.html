@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interview</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- NAVBAR -->
+    <div class="nav">
+      <div class="brand">
+        <h1 id="title">Interview</h1>
+        <small class="muted" id="subtitle">Role-based AI interview</small>
+      </div>
+
+      <!-- TIMER + TAB SWITCH -->
+      <div class="row status-badges">
+        <div class="pill" id="timePill">
+          ⏱ Time left: <span class="mono" id="timeLeft">30:00</span>
+        </div>
+        <div class="pill" id="tabPill">
+          ⚠ Tab switches: <span class="mono" id="tabSwitches">0</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN LAYOUT -->
+    <div class="interview-layout">
+      <aside class="camera-panel">
+        <div class="card compact-card">
+          <h2>Proctoring camera</h2>
+          <video id="camPreview" autoplay playsinline muted class="compact-cam"></video>
+          <div class="muted small" id="camStatus" style="margin-top: 8px">
+            Camera loading...
+          </div>
+          <div class="muted small" id="yoloStatus" style="margin-top: 10px"></div>
+        </div>
+      </aside>
+
+      <section class="main-panel">
+        <div class="card">
+          <h2>Question <span id="qIndex">1</span> / <span id="qTotal">10</span></h2>
+
+          <div class="qmeta">
+            <span class="tag" id="qDifficulty">Medium</span>
+            <span class="tag" id="qCategory">Technical</span>
+            <span class="tag" id="aiTag">AI Generated</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div id="questionText" style="font-size: 16px; line-height: 1.4">
+            Loading question...
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Your answer</h2>
+
+          <!-- WARNING BOX -->
+        <div id="proctorBanner" class="item" style="display:none; border-color: rgba(251,191,36,.35)">
+          <div class="row" style="justify-content:space-between;">
+            <div><b>⚠ Warning</b></div>
+            <div class="muted small">Max allowed: 3</div>
+          </div>
+          <div class="muted small" id="proctorBannerText" style="margin-top:6px"></div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- ANSWER BOX -->
+        <label for="answerBox">Type (or use voice)</label>
+        <textarea id="answerBox" placeholder="Write your answer here..."></textarea>
+
+        <!-- BUTTONS -->
+        <div class="row" style="margin-top: 10px">
+          <button class="btn" id="voiceBtn">🎤 Start voice</button>
+          <button class="btn primary" id="submitBtn">Submit & next</button>
+          <button class="btn danger" id="finishBtn">Finish now</button>
+        </div>
+
+        <div class="muted small" id="voiceStatus" style="margin-top: 8px"></div>
+
+        <div class="divider"></div>
+
+        <!-- LAST FEEDBACK -->
+        <div id="lastEvalWrap" style="display: none">
+          <h2 style="margin-top: 0">Last feedback</h2>
+
+          <div class="row" style="justify-content: space-between">
+            <div>
+              Score:
+              <span class="score mid" id="lastScore">-</span>
+            </div>
+            <div class="muted small mono" id="lastSaved"></div>
+          </div>
+          <div class="muted small" style="margin-top:10px">
+            Emotion:
+            <span class="mono" id="lastEmotion">-</span>
+          </div>
+
+          <div class="divider"></div>
+          <div class="muted small"><b>Feedback:</b> <span id="lastFeedback"></span></div>
+
+          <div class="divider"></div>
+          <div class="muted small"><b>Communication:</b> <span id="lastCommunication"></span></div>
+          
+          <div class="divider"></div>
+          <div class="muted small"><b>Suggestions:</b> <div id="lastSuggestions"></div></div>
+
+          <div class="divider"></div>
+          <div class="muted small"><b>Solution:</b> <div id="lastSolution"></div></div>
+
+          <div class="divider"></div>
+          <div class="muted small"><b>Sentiment Feedback:</b> <span id="lastSentimentFeedback">-</span></div>
+        </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- VIDEO RECORDING PLAYBACK MODAL -->
+  <div
+    id="recordingModal"
+    style="display:none; position:fixed; inset:0; background:rgba(0,0,0,.65); z-index:999; align-items:center; justify-content:center; padding:24px;"
+  >
+    <div class="card" style="max-width:900px; width:100%; padding:22px">
+      <h2 style="margin-top:0">Video recording playback</h2>
+      <div class="muted small" id="recordingStatus"></div>
+      <video
+        id="recordedVideo"
+        controls
+        playsinline
+        style="width:100%; border-radius:14px; margin-top:12px; background:rgba(0,0,0,.25)"
+      ></video>
+      <div class="row" style="justify-content:flex-end; margin-top:14px">
+        <button class="btn primary" id="viewResultsBtn">View results</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN JS -->
+  <script src="./js/interview.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
